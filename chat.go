@@ -277,6 +277,8 @@ type ChatCompletionRequest struct {
 	Prediction *Prediction `json:"prediction,omitempty"`
 	// ExtraBody provides a way to add non-standard parameters to the request body. such as think mode for qwen3
 	ChatTemplateKwargs map[string]interface{} `json:"chat_template_kwargs,omitempty"`
+	EnableThinking     *bool                  `json:"enable_thinking,omitempty"`
+	ExtraBody          map[string]interface{} `json:"extra_body,omitempty"`
 }
 
 type StreamOptions struct {
