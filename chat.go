@@ -279,6 +279,7 @@ type ChatCompletionRequest struct {
 	ChatTemplateKwargs map[string]interface{} `json:"chat_template_kwargs,omitempty"`
 	EnableThinking     *bool                  `json:"enable_thinking,omitempty"`
 	ExtraBody          map[string]interface{} `json:"extra_body,omitempty"`
+	Reasoning          map[string]interface{} `json:"reasoning,omitempty"`
 }
 
 type StreamOptions struct {
