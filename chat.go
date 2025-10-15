@@ -280,6 +280,14 @@ type ChatCompletionRequest struct {
 	EnableThinking     *bool                  `json:"enable_thinking,omitempty"`
 	ExtraBody          map[string]interface{} `json:"extra_body,omitempty"`
 	Reasoning          map[string]interface{} `json:"reasoning,omitempty"`
+	Caller             *CallerInfo            `json:"caller,omitempty"`
+}
+
+type CallerInfo struct {
+	App   string `json:"app"`
+	Scene string `json:"scene"`
+	Op    string `json:"op"`
+	User  string `json:"user"`
 }
 
 type StreamOptions struct {
