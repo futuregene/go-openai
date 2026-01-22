@@ -257,6 +257,18 @@ type ChatCompletionRequestExtensions struct {
 	// ensuring predictable and consistent outputs in scenarios where specific
 	// choices are required.
 	GuidedChoice []string `json:"guided_choice,omitempty"`
+	// ExtraBody provides a way to add non-standard parameters to the request body. such as think mode for qwen3
+	EnableThinking *bool                  `json:"enable_thinking,omitempty"`
+	ExtraBody      map[string]interface{} `json:"extra_body,omitempty"`
+	Reasoning      map[string]interface{} `json:"reasoning,omitempty"`
+	Caller         *CallerInfo            `json:"caller,omitempty"`
+}
+
+type CallerInfo struct {
+	App   string `json:"app"`
+	Scene string `json:"scene"`
+	Op    string `json:"op"`
+	User  string `json:"user"`
 }
 
 // ChatCompletionRequest represents a request structure for chat completion API.
@@ -333,18 +345,6 @@ type ChatCompletionRequest struct {
 	SafetyIdentifier string `json:"safety_identifier,omitempty"`
 	// Embedded struct for non-OpenAI extensions
 	ChatCompletionRequestExtensions
-	// ExtraBody provides a way to add non-standard parameters to the request body. such as think mode for qwen3
-	EnableThinking *bool                  `json:"enable_thinking,omitempty"`
-	ExtraBody      map[string]interface{} `json:"extra_body,omitempty"`
-	Reasoning      map[string]interface{} `json:"reasoning,omitempty"`
-	Caller         *CallerInfo            `json:"caller,omitempty"`
-}
-
-type CallerInfo struct {
-	App   string `json:"app"`
-	Scene string `json:"scene"`
-	Op    string `json:"op"`
-	User  string `json:"user"`
 }
 
 type StreamOptions struct {
