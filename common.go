@@ -28,7 +28,6 @@ type PromptTokensDetails struct {
 	CacheCreation            *CacheCreation `json:"cache_creation"`
 }
 
-// CacheCreation Breakdown of tokens used for cache creation.
 type CacheCreation struct {
 	Ephemeral5mInputTokens int `json:"ephemeral_5m_input_tokens"`
 }
