@@ -21,6 +21,14 @@ type CompletionTokensDetails struct {
 
 // PromptTokensDetails Breakdown of tokens used in the prompt.
 type PromptTokensDetails struct {
-	AudioTokens  int `json:"audio_tokens"`
-	CachedTokens int `json:"cached_tokens"`
+	AudioTokens              int            `json:"audio_tokens"`
+	CachedTokens             int            `json:"cached_tokens"`
+	CacheCreationInputTokens int            `json:"cache_creation_input_tokens"`
+	CacheType                string         `json:"cache_type"`
+	CacheCreation            *CacheCreation `json:"cache_creation"`
+}
+
+// CacheCreation Breakdown of tokens used for cache creation.
+type CacheCreation struct {
+	Ephemeral5mInputTokens int `json:"ephemeral_5m_input_tokens"`
 }
